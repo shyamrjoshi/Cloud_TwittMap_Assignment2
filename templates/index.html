@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TwittMap on Local Machine And EBS</title>
+    <style>
+        body{
+            background-color:lightblue;
+        }
+       #map {
+        height: 400px;
+        width: 80%;
+       }
+    </style>
+</head>
+<body onload="initMap({{locs|safe}})">
+<h1>TwittMap for Nationally Trending Topics</h1>
+<form method="post">
+    Please select a topic from the dropdown -
+    <select name="tags">
+        <option value="Instagram">Instagram</option>
+        <option value="Facebook">Facebook</option>
+        <option value="SundayMorning">SundayMorning</option>
+        <option value="Trump">Trump</option>
+        <option value="Hillary">Hillary</option>
+    </select>
+    <input type="submit" value="Plot">
+
+</form>
+<br/>
+<div id="map"></div>
+<script src="/static/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAmnmMOgZ7PZHcJeupVdW_RPp60P5MN5BY&callback=initMap">
+</script>
+</body>
+</html>

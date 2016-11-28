@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TwittTrends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  <h3> Twitter Sentiment Analysis on various Topics </h3>
+  </head>
+  <body onload="initMap({{data}})" >
+
+  <div id="input">
+                        <form method="POST", action="{{ url_for('search_keyword') }}">
+                            Select any of the below topics
+                            <select name="tags" id="tags">
+
+                                <option value=""></option>
+                                <option value="Trump"> Trump </option>
+                                <option value="Photos"> Photos </option>
+                                <option value="Hillary"> Hillary </option>
+                                <option value="Facebook"> Facebook</option>
+
+                                <option value="SundayMorning">SundayMorning </option>
+                                <option value="NYC"> NYC </option>
+                                <option value="sports"> sports </option>
+                                <option value="football"> football </option>
+                                <option value="cricket"> cricket </option>
+                            </select>
+                            <input type="SUBMIT" value="Submit">
+                        </form>
+                    </div>
+  <br/>
+    <div id="map"></div>
+    <script src="/static/script.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFz87KjGqesLhracG_jC9etTceY-dVfk&callback=initMap">
+    </script>
+  </body>
+</html>
