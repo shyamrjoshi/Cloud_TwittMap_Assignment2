@@ -47,8 +47,8 @@ def create_sqs_connection():
     global conn
     conn = boto.sqs.connect_to_region(
         "us-west-2",
-        aws_access_key_id='AKIAIVUTQRY6WTUNNKSQ',
-        aws_secret_access_key='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')
+        aws_access_key_id='',
+        aws_secret_access_key='')
     q = conn.create_queue('myqueue')
 
 def main():
